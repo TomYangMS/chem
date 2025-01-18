@@ -1,0 +1,97 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+#game {
+    margin: 10px auto;
+    width: 100%;
+    max-width: 800px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#periodic-table {
+    border-collapse: collapse;
+    margin: 10px auto;
+    width: 100%;
+}
+
+#periodic-table td {
+    border: 1px solid #000;
+    width: 10%; /* 使用百分比寬度，適應不同屏幕 */
+    height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #fff;
+    cursor: pointer;
+    font-size: 14px; /* 調整字體大小 */
+}
+
+/* 灰色格子 */
+#periodic-table td.gap {
+    background-color: #e0e0e0;
+    border: none;
+    cursor: default;
+}
+
+#dice {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 18px;
+    margin: 10px auto;
+    display: inline-block;
+    width: 80%;
+    max-width: 200px;
+}
+
+#dice:hover {
+    background-color: #45a049;
+}
+
+#current-element {
+    font-size: 20px;
+    margin: 10px;
+}
+
+#message {
+    font-size: 20px;
+    color: red;
+    display: none;
+}
+
+@keyframes flash {
+    0% { background-color: red; }
+    50% { background-color: white; }
+    100% { background-color: red; }
+}
+
+.flash {
+    animation: flash 0.5s;
+}
+
+/* 手機端樣式 */
+@media (max-width: 600px) {
+    #periodic-table td {
+        height: 40px; /* 手機端格子高度調整 */
+        font-size: 12px; /* 手機端字體大小調整 */
+    }
+
+    #dice {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+
+    #current-element {
+        font-size: 18px;
+    }
+
+    #message {
+        font-size: 18px;
+    }
+}
