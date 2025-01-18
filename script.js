@@ -44,7 +44,7 @@ function rollDice() {
     currentElement = remainingElements[randomIndex];
     remainingElements.splice(randomIndex, 1); // 從剩餘元素中移除
     document.getElementById('current-element').innerText = `當前元素：${currentElement.symbol} (${currentElement.name})`;
-    document.getElementById('knowledge-text').innerText = ""; // 清空科普知識
+    document.getElementById('info-text').innerText = ""; // 清空基本信息
 }
 
 // 點擊格子放置元素
@@ -57,7 +57,7 @@ document.querySelectorAll('#periodic-table td').forEach(cell => {
         if (cell.getAttribute('data-position') === currentElement.position) {
             cell.innerText = `${currentElement.symbol}\n${currentElement.name}`;
             cell.setAttribute('data-type', currentElement.type); // 設置格子類型
-            showKnowledge(currentElement);
+            showInfo(currentElement);
             currentElement = null;
             document.getElementById('current-element').innerText = '';
             checkCompletion();
@@ -71,9 +71,15 @@ document.querySelectorAll('#periodic-table td').forEach(cell => {
     });
 });
 
-// 顯示科普知識
-function showKnowledge(element) {
-    document.getElementById('knowledge-text').innerText = `${element.name}（${element.symbol}）：${element.description}`;
+// 顯示元素基本信息
+function showInfo(element) {
+    const infoText = `
+        名稱：${element.name}<br>
+        符號：${element.symbol}<br>
+        位置：${element.position}<br>
+        類型：${element.type === "metal" ? "金屬" : "非金屬"}
+    `;
+    document.getElementById('info-text').innerHTML = infoText;
 }
 
 // 檢查是否完成
@@ -86,7 +92,8 @@ function checkCompletion() {
         }
     });
     if (isComplete) {
-        alert("恭喜！你完成了元素拼圖！\n你已經學會了前30號元素的知識！");
+        document.body.classList.add('golden-background');
+        alert("你好棒棒啊！");
     }
 }
 
@@ -99,6 +106,7 @@ function resetGame() {
     });
     currentElement = null;
     document.getElementById('current-element').innerText = '';
-    document.getElementById('knowledge-text').innerText = "這裡會顯示元素的科普知識。";
+    document.getElementById('info-text').innerText = "這裡會顯示元素的基本信息。";
     remainingElements = [...elements]; // 重置剩餘元素
+    document.body.classList.remove('golden-background'); // 移除金色背景
 }
