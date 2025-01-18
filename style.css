@@ -7,6 +7,12 @@ body {
     transition: background-color 0.5s;
 }
 
+h1 {
+    color: #006400;
+    font-size: 2.5em;
+    margin-top: 20px;
+}
+
 #game {
     margin: 20px auto;
     width: 90%;
@@ -14,7 +20,8 @@ body {
     padding: 20px;
     box-sizing: border-box;
     background-color: #fff;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
 }
 
 #periodic-table {
@@ -55,10 +62,17 @@ body {
     width: 150px;
     text-align: center;
     line-height: 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 #dice:hover {
     background: linear-gradient(#45a049, #4caf50);
+}
+
+#current-element {
+    font-size: 20px;
+    margin: 20px;
+    color: #006400;
 }
 
 #info-box {
@@ -69,13 +83,24 @@ body {
     width: 80%;
     max-width: 800px;
     text-align: left;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    animation: fadeIn 1s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+#info-box h2 {
+    margin-top: 0;
+    color: #006400;
+}
+
+#info-text {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+@keyframes flash {
+    0% { background-color: red; }
+    50% { background-color: white; }
+    100% { background-color: red; }
 }
 
 .flash {
