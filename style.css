@@ -4,6 +4,7 @@ body {
     background-color: #f0f0f0;
     margin: 0;
     padding: 0;
+    transition: background-color 0.5s; /* 背景顏色過渡效果 */
 }
 
 #game {
@@ -33,12 +34,13 @@ body {
 
 /* 非金屬格子背景 */
 #periodic-table td[data-type="non-metal"] {
-    background-color: #aad4ff; /* 淺藍色 */
+    background-color: #aaffaa; /* 淺綠色 */
 }
 
 /* 金屬格子背景 */
 #periodic-table td[data-type="metal"] {
-    background-color: #fff3a3; /* 淺黃色 */
+    background-color: #006400; /* 深綠色 */
+    color: white; /* 文字顏色為白色 */
 }
 
 /* 灰色格子 */
@@ -68,7 +70,7 @@ body {
     margin: 20px;
 }
 
-#knowledge-box {
+#info-box {
     margin: 20px auto;
     padding: 20px;
     border: 2px solid #000;
@@ -78,7 +80,7 @@ body {
     text-align: left;
 }
 
-#knowledge-box h2 {
+#info-box h2 {
     margin-top: 0;
 }
 
@@ -90,4 +92,9 @@ body {
 
 .flash {
     animation: flash 0.5s;
+}
+
+/* 完成時的全屏金色背景 */
+.golden-background {
+    background-color: gold !important;
 }
