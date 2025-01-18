@@ -1,10 +1,10 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: '微软雅黑', Arial, sans-serif;
     text-align: center;
-    background-color: #f0f0f0;
+    background-color: #e0fff0;
     margin: 0;
     padding: 0;
-    transition: background-color 0.5s; /* 背景顏色過渡效果 */
+    transition: background-color 0.5s;
 }
 
 #game {
@@ -13,6 +13,8 @@ body {
     max-width: 1200px;
     padding: 20px;
     box-sizing: border-box;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 #periodic-table {
@@ -23,27 +25,18 @@ body {
 
 #periodic-table td {
     border: 1px solid #000;
-    width: 60px; /* 固定格子寬度 */
-    height: 60px; /* 固定格子高度 */
+    width: 60px;
+    height: 60px;
     text-align: center;
     vertical-align: middle;
-    background-color: #fff;
-    cursor: pointer;
     font-size: 14px;
+    transition: transform 0.2s;
 }
 
-/* 非金屬格子背景 */
-#periodic-table td[data-type="non-metal"] {
-    background-color: #aaffaa; /* 淺綠色 */
+#periodic-table td:hover {
+    transform: scale(1.05);
 }
 
-/* 金屬格子背景 */
-#periodic-table td[data-type="metal"] {
-    background-color: #006400; /* 深綠色 */
-    color: white; /* 文字顏色為白色 */
-}
-
-/* 灰色格子 */
 #periodic-table td.gap {
     background-color: #e0e0e0;
     border: none;
@@ -51,23 +44,21 @@ body {
 }
 
 #dice {
-    background-color: #4CAF50;
+    background: linear-gradient(#4caf50, #45a049);
     color: white;
     padding: 10px 20px;
+    border-radius: 50%;
     cursor: pointer;
     font-size: 18px;
     margin: 20px auto;
     display: inline-block;
-    width: 150px; /* 固定按鈕寬度 */
+    width: 150px;
+    text-align: center;
+    line-height: 50px;
 }
 
 #dice:hover {
-    background-color: #45a049;
-}
-
-#current-element {
-    font-size: 20px;
-    margin: 20px;
+    background: linear-gradient(#45a049, #4caf50);
 }
 
 #info-box {
@@ -78,23 +69,19 @@ body {
     width: 80%;
     max-width: 800px;
     text-align: left;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    animation: fadeIn 1s;
 }
 
-#info-box h2 {
-    margin-top: 0;
-}
-
-@keyframes flash {
-    0% { background-color: red; }
-    50% { background-color: white; }
-    100% { background-color: red; }
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 .flash {
     animation: flash 0.5s;
 }
 
-/* 完成時的全屏金色背景 */
 .golden-background {
     background-color: gold !important;
 }
