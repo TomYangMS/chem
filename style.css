@@ -7,28 +7,28 @@ body {
 }
 
 #game {
-    margin: 10px auto;
-    width: 100%;
-    max-width: 800px;
-    padding: 10px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1200px; /* 調整最大寬度 */
+    padding: 20px;
     box-sizing: border-box;
 }
 
 #periodic-table {
     border-collapse: collapse;
-    margin: 10px auto;
+    margin: 20px auto;
     width: 100%;
 }
 
 #periodic-table td {
     border: 1px solid #000;
-    width: 10%; /* 使用百分比寬度，適應不同屏幕 */
-    height: 50px;
+    width: 60px; /* 固定格子寬度 */
+    height: 60px; /* 固定格子高度 */
     text-align: center;
     vertical-align: middle;
     background-color: #fff;
     cursor: pointer;
-    font-size: 14px; /* 調整字體大小 */
+    font-size: 14px;
 }
 
 /* 灰色格子 */
@@ -44,10 +44,9 @@ body {
     padding: 10px 20px;
     cursor: pointer;
     font-size: 18px;
-    margin: 10px auto;
+    margin: 20px auto;
     display: inline-block;
-    width: 80%;
-    max-width: 200px;
+    width: 150px; /* 固定按鈕寬度 */
 }
 
 #dice:hover {
@@ -56,7 +55,7 @@ body {
 
 #current-element {
     font-size: 20px;
-    margin: 10px;
+    margin: 20px;
 }
 
 #message {
@@ -73,25 +72,4 @@ body {
 
 .flash {
     animation: flash 0.5s;
-}
-
-/* 手機端樣式 */
-@media (max-width: 600px) {
-    #periodic-table td {
-        height: 40px; /* 手機端格子高度調整 */
-        font-size: 12px; /* 手機端字體大小調整 */
-    }
-
-    #dice {
-        font-size: 16px;
-        padding: 8px 16px;
-    }
-
-    #current-element {
-        font-size: 18px;
-    }
-
-    #message {
-        font-size: 18px;
-    }
 }
