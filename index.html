@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>元素拼圖大挑戰</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>元素拼圖大挑戰</h1>
+    <div id="game">
+        <!-- 周期表格子 -->
+        <table id="periodic-table">
+            <!-- 第一行：氫和氦 -->
+            <tr>
+                <td data-position="1-1"></td>
+                <td class="gap" colspan="16"></td> <!-- 灰色格子 -->
+                <td data-position="1-18"></td>
+            </tr>
+            <!-- 第二行 -->
+            <tr>
+                <td data-position="2-1"></td>
+                <td data-position="2-2"></td>
+                <td class="gap" colspan="10"></td> <!-- 灰色格子 -->
+                <td data-position="2-13"></td>
+                <td data-position="2-14"></td>
+                <td data-position="2-15"></td>
+                <td data-position="2-16"></td>
+                <td data-position="2-17"></td>
+                <td data-position="2-18"></td>
+            </tr>
+            <!-- 第三行 -->
+            <tr>
+                <td data-position="3-1"></td>
+                <td data-position="3-2"></td>
+                <td class="gap" colspan="10"></td> <!-- 灰色格子 -->
+                <td data-position="3-13"></td>
+                <td data-position="3-14"></td>
+                <td data-position="3-15"></td>
+                <td data-position="3-16"></td>
+                <td data-position="3-17"></td>
+                <td data-position="3-18"></td>
+            </tr>
+            <!-- 第四行 -->
+            <tr>
+                <td data-position="4-1"></td>
+                <td data-position="4-2"></td>
+                <td data-position="4-3"></td>
+                <td data-position="4-4"></td>
+                <td data-position="4-5"></td>
+                <td data-position="4-6"></td>
+                <td data-position="4-7"></td>
+                <td data-position="4-8"></td>
+                <td data-position="4-9"></td>
+                <td data-position="4-10"></td>
+                <td data-position="4-11"></td>
+                <td data-position="4-12"></td>
+            </tr>
+        </table>
+
+        <!-- 骰子按鈕 -->
+        <div id="dice" onclick="rollDice()">骰子</div>
+
+        <!-- 當前骰出的元素 -->
+        <div id="current-element"></div>
+
+        <!-- 提示信息 -->
+        <div id="message"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
